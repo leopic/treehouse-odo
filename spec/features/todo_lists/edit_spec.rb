@@ -18,6 +18,10 @@ describe 'Editing todo lists' do
 
     visit "/todo_lists"
     expect(page).to have_content "New title"
+
+    todo_list.reload
+    expect(todo_list.title).to eq "New title"
+    expect(todo_list.description).to eq "New description"
   end
 
 end
